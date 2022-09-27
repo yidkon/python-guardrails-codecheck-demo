@@ -1,0 +1,124 @@
+"""This program computes math and secret key"""
+
+from datetime import date
+
+import random
+import sys
+import string
+import math
+from math import pi
+
+# this code let users enter there selection in order and prompt question based on  the selection
+print("Menu")
+menu_choice = {
+    'a': 'Generate Secure Password',
+    'b': 'Calculate and Format a Percentage',
+    'c': 'How many days from today until July 4, 2025?',
+    'd': 'Use the Law of Cosines to calculate the leg of a triangle',
+    'e': 'Calculate the volume of a Right Circular Cylinder',
+    'f': 'Exit program'
+}
+# while loop to prompt user to enter selection and if not a and prompt user to re-enter
+while True:
+    for key in menu_choice.items():
+        print(key)
+    choice = input("Enter your selection: ")
+    if choice == 'a':
+        print("Generate secure password")
+        break
+    if choice != 'a':
+        print('Try again')
+# prompt user to enter length of password and generate random password
+ALPHABET = string.ascii_letters
+NUMBERS = string.digits
+CHARACTERS = string.punctuation
+PASSWORD = ALPHABET + NUMBERS + CHARACTERS
+PASSWORD_LENGTH = int(input("Enter your password length: "))
+GENERATE_PASSWORD = " ".join(random.sample(PASSWORD, PASSWORD_LENGTH))
+print(f"Your password is {GENERATE_PASSWORD}")
+print("  ")
+
+# while loop to prompt user to enter selection and if not a and prompt user to re-enter
+while True:
+    for key in menu_choice.items():
+        print(key)
+    choice = input("Enter your selection: ")
+    if choice == 'b':
+        print("Calculate and Format a Percentage")
+        break
+    if choice != 'b':
+        print('Try again')
+# prompt user to enter numerator and denominator and calculate percentage
+num1 = float(input("Enter the numerator: "))
+num2 = float(input("Enter the denominator: "))
+percentage = 100 * (float(num1) / float(num2))
+print(f"Result {percentage:.2f} %")
+
+print("  ")
+
+# while loop to prompt user to enter selection and if not a and prompt user to re-enter
+while True:
+    for key in menu_choice.items():
+        print(key)
+    choice = input("Enter your selection: ")
+    if choice == 'c':
+        print("How many days from today until July 4, 2025?")
+        break
+    if choice != 'c':
+        print("Try again")
+
+# date_calculator = int(input("Enter today's date: "))
+today_date = date.today()
+end_date = date(2025, 7, 4)
+df = end_date - today_date
+print(f"There are {df.days} days")
+print("  ")
+
+# while loop to prompt user to enter selection and if not a and prompt user to re-enter
+while True:
+    for key in menu_choice.items():
+        print(key)
+    choice = input("Enter your selection: ")
+    if choice == 'd':
+        print("Use the Law of Cosines to calculate the leg of a triangle")
+        break
+    if choice != 'd':
+        print("Try again")
+
+# prompt users to enter  side 1, side 2, side 3 and calculate volume
+a = float(input(" Enter side 1: "))
+b = float(input(" Enter side 2: "))
+degree_c = float(input("Enter degree of a triangle: "))
+# c2 = a2 + b2 − 2ab cos(C)
+c = math.sqrt(math.pow(a, 2) + math.pow(b, 2) - (2 * a * b) * math.cos(degree_c))
+print(f"c equals to {c:.3f}")
+print(math.cos(degree_c))
+print("  ")
+
+# while loop to prompt user to enter selection and if not a and prompt user to re-enter
+while True:
+    for key in menu_choice.items():
+        print(key)
+    choice = input("Enter your selection: ")
+    if choice == 'e':
+        print("Calculate the volume of a Right Circular Cylinder")
+        break
+    if choice != 'e':
+        print("Try again")
+
+# Volume of Circular Cylinder = (πr2) × Height
+r = float(input("Enter radius: "))
+h = float(input("Enter the height: "))
+v = (pi * r**2) * h
+
+print(f" Volume is  {v:.2f}")
+
+print("  ")
+# prompt user to enter selection. select 'f' to exit program
+while True:
+    for key in menu_choice.items():
+        print(key)
+    choice = input("Enter your selection: ")
+    if choice == 'f':
+        print("Thank you for using the program. Good Bye!!! ")
+    sys.exit()
